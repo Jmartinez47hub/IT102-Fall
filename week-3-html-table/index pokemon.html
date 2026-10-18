@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Table Assignment</title>
+   <style>
+    
+    <!-- CCS Skeleton Obtained using AI -->
+    <!--Tested and checked for errors all working as it should -->
+    /* Dark background for maximum contrast */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0f172a;
+        color: #f8fafc;
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+    }
+
+    /* Main Table Container with Electric Glow */
+    table {
+        width: 100%;
+        max-width: 1000px;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 25px rgba(234, 179, 8, 0.25);
+        background-color: #1e293b;
+    }
+
+    /* Flashy Gradient Header */
+    thead {
+        background: linear-gradient(135deg, #ff0055 0%, #7928ca 50%, #4338ca 100%);
+    }
+
+    th {
+        padding: 16px;
+        color: #ffffff;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+        border-bottom: 3px solid #f59e0b;
+    }
+
+    /* Table Rows Base Style */
+    tbody tr {
+        transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Alternating Row Colors */
+    tbody tr:nth-child(even) {
+        background-color: #1e293b;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #0f172a;
+    }
+
+    td {
+        padding: 14px 16px;
+        border-bottom: 1px solid #334155;
+        color: #e2e8f0;
+    }
+
+    /* Interactive Hover "Moves" */
+    tbody tr:hover {
+        background-color: #334155;
+        transform: scale(1.02); /* Slight zoom movement */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+
+    /* Give the first column (Pokémon Name) a special bold glow on hover */
+    tbody tr:hover td:first-child {
+        color: #facc15;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+    }
+</style>
+</head>
+<body>
+
+    <!-- Main Page Heading -->
+    <h1>Pokemon Characters Table</h1>
+
+    <!-- HTML Table Container -->
+    <!--Creates a table-->
+    <table>
+        <!--Table Headings-->
+        <thead>
+            <!-- Table Rows-->
+            <tr>
+                <!--Table Data-->
+                <th>Pokémon Name</th>
+                <th>Type</th>
+                <th>Abilities</th>
+                <th>Weakness</th>
+                <th>Evolution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bulbasaur</td>
+                <td>Grass / Poison</td>
+                <td>Overgrow, Chlorophyll</td>
+                <td>Fire, Ice, Flying, Psychic</td>
+                <td>Ivysaur (Level 16)</td>
+            </tr>
+            <tr>
+                <td>Charmander</td>
+                <td>Fire</td>
+                <td>Blaze, Solar Power</td>
+                <td>Water, Ground, Rock</td>
+                <td>Charmeleon (Level 16)</td>
+            </tr>
+            <tr>
+                <td>Squirtle</td>
+                <td>Water</td>
+                <td>Torrent, Rain Dish</td>
+                <td>Electric, Grass</td>
+                <td>Wartortle (Level 16)</td>
+            </tr>
+            <tr>
+                <td>Pikachu</td>
+                <td>Electric</td>
+                <td>Static, Lightning Rod</td>
+                <td>Ground</td>
+                <td>Raichu (Thunder Stone)</td>
+            </tr>
+            <tr>
+                <td>Jigglypuff</td>
+                <td>Normal / Fairy</td>
+                <td>Cute Charm, Competitive</td>
+                <td>Steel, Poison</td>
+                <td>Wigglytuff (Moon Stone)</td>
+            </tr>
+            <tr>
+                <td>Machop</td>
+                <td>Fighting</td>
+                <td>Guts, No Guard</td>
+                <td>Flying, Psychic, Fairy</td>
+                <td>Machoke (Level 28)</td>
+            </tr>
+            <tr>
+                <td>Geodude</td>
+                <td>Rock / Ground</td>
+                <td>Rock Head, Sturdy</td>
+                <td>Water, Grass, Ice, Fighting</td>
+                <td>Graveler (Level 25)</td>
+            </tr>
+            <tr>
+                <td>Gastly</td>
+                <td>Ghost / Poison</td>
+                <td>Levitate</td>
+                <td>Ghost, Dark, Psychic</td>
+                <td>Haunter (Level 25)</td>
+            </tr>
+            <tr>
+                <td>Magikarp</td>
+                <td>Water</td>
+                <td>Swift Swim, Rattled</td>
+                <td>Electric, Grass</td>
+                <td>Gyarados (Level 20)</td>
+            </tr>
+            <tr>
+                <td>Eevee</td>
+                <td>Normal</td>
+                <td>Run Away, Adaptability</td>
+                <td>Fighting</td>
+                <td>Vaporeon, Jolteon, Flareon</td>
+            </tr>
+        </tbody>
+    </table>
