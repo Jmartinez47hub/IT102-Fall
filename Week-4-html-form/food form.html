@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Food Order Form</title>
+<!-- Optional CSS Styling to make the form clean and easy to read -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        /* Places the form inside a styled container box */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333333;
+            text-align: center;
+        }
+        p {
+            color: #666666;
+            text-align: center;
+        }
+        /* Makes labels easy to read and adds spacing */
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444444;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't break layout */
+        }
+        /* Makes the submit button easy to see */
+        button[type="submit"] {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .help-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Heading using <h1> -->
+    <h1>Customer Food Order Form</h1>
+
+    <!-- Short paragraph explaining the form -->
+    <p>Please complete the form below to submit your food preference and allergy information.</p>
+
+    <!-- Form tag with action attribute -->
+    <form action="#" method="post">
+
+        <!-- First Name Label and Textbox with minlength, maxlength, and required attributes -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" minlength="2" maxlength="30" required>
+
+        <br><br>
+
+        <!-- Last Name Label and Textbox with minlength, maxlength, and required attributes -->
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" minlength="2" maxlength="30" required>
+
+        <br><br>
+
+        <!-- Food Preference Dropdown using <select> with Chicken, Beef, and Fish options -->
+        <label for="foodChoice">Food Preference:</label>
+        <select id="foodChoice" name="foodChoice" required>
+            <option value="">-- Select a food option --</option>
+            <option value="chicken">Chicken</option>
+            <option value="beef">Beef</option>
+            <option value="fish">Fish</option>
+        </select>
+
+        <br><br>
+
+        <!-- Textarea for Allergy Information -->
+        <label for="allergies">Allergy Information:</label>
+        <br>
+        <textarea id="allergies" name="allergies" rows="5" cols="40" placeholder="List any allergies here. If none, leave blank."></textarea>
+
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Order</button>
+
+    </form>
+
+    <br>
+</body>
+</html>
