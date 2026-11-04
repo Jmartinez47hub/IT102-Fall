@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Official Wife Evaluation Form</title>
+ <style>
+    /* Base Setup & Background */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Floating Hearts Animation */
+    .heart-bg {
+      position: fixed;
+      top: -10vh;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      user-select: none;
+      pointer-events: none;
+      animation: floatUp 8s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Heart Positional Delays */
+    .heart-bg:nth-child(1) { left: 10%; animation-duration: 6s; font-size: 24px; }
+    .heart-bg:nth-child(2) { left: 25%; animation-duration: 9s; animation-delay: 1s; }
+    .heart-bg:nth-child(3) { left: 40%; animation-duration: 7s; animation-delay: 2s; font-size: 28px; }
+    .heart-bg:nth-child(4) { left: 60%; animation-duration: 10s; animation-delay: 0.5s; }
+    .heart-bg:nth-child(5) { left: 75%; animation-duration: 8s; animation-delay: 3s; font-size: 22px; }
+    .heart-bg:nth-child(6) { left: 90%; animation-duration: 7s; animation-delay: 1.5s; }
+
+    /* Main Form Card */
+    .form-card {
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25);
+      max-width: 460px;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      border: 3px solid #ffccd5;
+    }
+
+    /* Header Styling */
+    h2 {
+      color: #d81b60;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pulse-heart {
+      display: inline-block;
+      animation: pulse 1.2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.25); }
+    }
+
+    /* Input Groups & Labels */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #4a4a4a;
+      font-size: 15px;
+    }
+
+    /* Styled Input Fields */
+    input[type="text"], 
+    input[type="number"], 
+    select, 
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #ffccd5;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s ease;
+      background-color: #fffafb;
+    }
+
+    input[type="text"]:focus, 
+    input[type="number"]:focus, 
+    select:focus, 
+    textarea:focus {
+      border-color: #d81b60;
+      box-shadow: 0 0 8px rgba(216, 27, 96, 0.3);
+      background-color: #ffffff;
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    /* Custom Radio Buttons with Hearts */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+
+    .radio-label input[type="radio"] {
+      accent-color: #d81b60;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    /* Submit Button */
+    button {
+      width: 100%;
+      background: linear-gradient(135deg, #ff4081 0%, #d81b60 100%);
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.45);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Results Section */
+    #results {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #fff0f3;
+      border-radius: 12px;
+      border: 2px dashed #ff8fa3;
+      display: none;
+    }
+
+    #results ul {
+      padding-left: 20px;
+      margin: 10px 0 0 0;
+    }
+
+    #results li {
+      margin-bottom: 6px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2>Official Wife Evaluation</h2>
+    
+    <!-- Formspree action linked here -->
+    <form id="wifeForm" action="https://formspree.io/f/xbggdlyy" method="POST">
+      
+      <div class="form-group">
+        <label for="snack">Required Snack Right Now:</label>
+        <input type="text" id="snack" name="favorite_snack" minlength="3" maxlength="30" placeholder="e.g. Chips, Chocolate..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Husband Rating (10 to 10):</label>
+        <input type="number" id="rating" name="husband_rating" min="10" max="10" value="10" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dinner">What do you want for dinner?</label>
+        <select id="dinner" name="dinner_choice">
+          <option value="I don't care">I don't care</option>
+          <option value="Whatever you want">Whatever you want</option>
+          <option value="You pick">You pick</option>
+          <option value="Tacos">Tacos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Snack Urgency Level:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="urgency" value="Low" checked> Low</label>
+          <label><input type="radio" name="urgency" value="Medium"> Medium</label>
+          <label><input type="radio" name="urgency" value="Emergency"> Emergency (Bring snacks now)</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="smallspoon">Who Will Be Small Spoon Tonight?</label>
+        <select id="smallspoon" name="smallspoon">
+          <option value="Husband">You</option>
+          <option value="Wife">Me</option>
+          <option value="We fight for it">We fight for it</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="complaints">Official Complaints (Max 0 characters):</label>
+        <textarea id="complaints" name="complaints" maxlength="0" placeholder="Try typing here... (disabled)"></textarea>
+      </div>
+
+      <button type="submit">Submit Official Review</button>
+    </form>
+
+    <div id="results">
+      <h3 style="margin-top:0; color: #d81b60;">Submitted Answers (Sent to Email!):</h3>
+      <div id="displayData"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('wifeForm');
+    const resultsDiv = document.getElementById('results');
+    const displayData = document.getElementById('displayData');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop normal page reload
+      
+      const formData = new FormData(form);
+
+      // Send data to Formspree in the background
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'json'
+          }
+        });
+
+        if (response.ok) {
+          // Show answers on screen for you locally too
+          let outputHTML = '<ul>';
+          formData.forEach((value, key) => {
+            let cleanKey = key.replace('_', ' ').toUpperCase();
+            outputHTML += `<li><strong>${cleanKey}:</strong> ${value || 'None'}</li>`;
+          });
+          outputHTML += '</ul>';
+          
+          displayData.innerHTML = outputHTML;
+          resultsDiv.style.display = 'block';
+          form.style.display = 'none'; // Hide form after submission
+        } else {
+          alert('Oops! There was a problem submitting your form.');
+        }
+      } catch (error) {
+        alert('Error connecting to Formspree.');
+      }
+    });
+  </script>
+
+</body>
+</html>

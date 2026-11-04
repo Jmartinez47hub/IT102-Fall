@@ -1,0 +1,21 @@
+/* 1. Heading 1 — h1: Green text */
+h1 {
+    color: green;
+}
+
+/* 2. Heading 2 — h2: Purple text */
+h2 {
+    color: purple;
+}
+
+/* 3. Paragraphs — p: Background color and a contrasting text color */
+p {
+    background-color: #ff0303;
+    color: #333333;
+}
+
+/* 4. Button — button: Blue background and white text */
+button {
+    background-color: blue;
+    color: white;
+}
