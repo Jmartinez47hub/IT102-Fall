@@ -1,0 +1,76 @@
+/* General page styling for readability */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    color: #d6a907;
+}
+p {
+    color: blueviolet; /* Blueviolet color for paragraph text*/
+}
+
+/* Styling the ordered list spacing */
+ol {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* ==========================================
+   CLASS SELECTORS FOR LIST ITEMS (.className)
+   ========================================== */
+.tier-one {
+    color: #990000; /* Crimson red text for top tier */
+    font-weight: bold;
+}
+
+.tier-two {
+     color: #00274c; /* Deep blue text for second tier */
+}
+.tier-three{
+    color:#007bff; /* Light blue text for third tier */
+}
+.tier-four{
+    color:yellow; /* Yellow text for fourth tier*/
+}
+.tier-five{
+    color:red; /* Red text for fith tier*/
+}
+.tier-six{
+    color:orange; /* Orange text for sixth tier*/
+}
+/* ==========================================
+   ID SELECTORS FOR BUTTONS (#idName)
+   ========================================== */
+#btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Hover effects to make buttons interactive */
+#btn-primary:hover {
+    background-color: #0056b3;
+}
+
+#btn-secondary:hover {
+    background-color: green;
+}

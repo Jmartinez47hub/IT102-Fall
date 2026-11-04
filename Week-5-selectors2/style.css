@@ -1,0 +1,87 @@
+/* General page styling for readability */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    color: #1a1a1a;
+}
+
+/* Styling the ordered list spacing */
+ol {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* ==========================================
+   CLASS SELECTORS FOR COLLEGE PROGRAMS
+   ========================================== */
+
+/* Items 1 & 5: Crimson (Roll Tide & Boomer Sooner) */
+.crimson-item {
+    color: #990000;
+    font-weight: bold;
+}
+
+/* Items 2 & 8: Greenish color (1980s Canes & Irish) */
+.green-item {
+    color: #006600;
+    font-weight: bold;
+}
+
+/* Item 3: Yellowish color / Maize (Using hex code) */
+.maize-item {
+    color: #FFCB05;
+    font-weight: bold;
+}
+
+/* Items 4 & 6: Red (Ole Nebraska U / Go Big Red!) */
+.red-item {
+    color: #E41C38;
+    font-weight: bold;
+}
+
+/* Item 7: Burnt Orange (Texas Longhorns) */
+.burnt-orange-item {
+    color: #BF5700;
+    font-weight: bold;
+}
+
+/* ==========================================
+   ID SELECTORS FOR BUTTONS (#idName)
+   ========================================== */
+
+/* Yes Button — Styled Green */
+#btn-yes {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* No Button — Styled Red */
+#btn-no {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Hover effects for buttons */
+#btn-yes:hover {
+    background-color: #218838;
+}
+
+#btn-no:hover {
+    background-color: #c82333;
+}
