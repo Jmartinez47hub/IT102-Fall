@@ -4,7 +4,7 @@ const Inventory = ["Eggs","Milk","Butter","Chocolate","Flour","Baking Soda"];
 console.log("Store Inventory");
 
 //Iterates our array made on top
-for (let i = 0; i <= Inventory.length; i++)
+for (let i = 0; i < Inventory.length; i++)
 // Shows our Output into the console
     {
     console.log(Inventory[i]);
